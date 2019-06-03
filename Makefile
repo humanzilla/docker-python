@@ -1,4 +1,4 @@
-default:
+build:
 	cd src && docker build \
 		--target base \
 		--tag humanzilla/python:latest \
