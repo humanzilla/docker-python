@@ -1,6 +1,6 @@
 # Humanzilla's Docker Python images.
 
 ```
-docker pull vevende/python:latest
-docker pull vevende/python:develop
+docker pull humanzilla/python:latest
+docker pull humanzilla/python:develop
 ```
