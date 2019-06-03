@@ -98,7 +98,7 @@ WORKDIR "/app"
 
 EXPOSE 8000
 
-COPY entrypoint-base.sh /sbin/docker-entrypoint.sh
+COPY docker-entrypoint.sh /sbin/docker-entrypoint.sh
 
 ENTRYPOINT ["tini", "--", "/sbin/docker-entrypoint.sh"]
 
@@ -119,4 +119,4 @@ RUN set -eux \
 # Setup neovim as the replacement for vim.
     && ln -s $(which nvim) /usr/local/bin/vim
 
-COPY entrypoint-development.sh /sbin/docker-entrypoint.sh
+COPY entrypoint-entrypoint-development.sh /sbin/docker-entrypoint.sh
