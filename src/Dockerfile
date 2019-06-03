@@ -119,4 +119,5 @@ RUN set -eux \
 # Setup neovim as the replacement for vim.
     && ln -s $(which nvim) /usr/local/bin/vim
 
-COPY entrypoint-entrypoint-development.sh /sbin/docker-entrypoint.sh
+COPY docker-entrypoint-develop.sh /sbin/docker-entrypoint.sh
+

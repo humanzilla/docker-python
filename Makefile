@@ -3,10 +3,9 @@ default:
 		--target base \
 		--tag humanzilla/python:latest \
 		--cache-from humanzilla/python:latest .
-
 	cd src && docker build \
 		--target develop \
-		--tag humanzilla/python:latest \
+		--tag humanzilla/python:develop \
 		--cache-from humanzilla/python:develop .
 
 push:
