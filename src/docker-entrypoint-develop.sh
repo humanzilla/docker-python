@@ -42,6 +42,7 @@ function setup_python_env() {
 }
 
 function setup_initialized() {
+    if [[ ! -f /app/requirements-develop.txt ]]; then return 0; fi
     if [[ -f /app/.initialized ]]; then return 0; fi
 
     step "Installing requirements"
@@ -64,9 +65,7 @@ function setup_initialized() {
 
     step "Initialized $(success [Done])"
 
-    rm -f ${HOME_APP}/.bashrc
-
-    setup_shell
+    if [[ -f /app/.bashrc ]]; then setup_shell; fi
 }
 
 function check_permissions() {
