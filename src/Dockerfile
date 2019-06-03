@@ -115,6 +115,8 @@ RUN set -eux \
         curl \
         unzip \
         gnupg \
-        postgresql-client;
+        postgresql-client \
+# Setup neovim as the replacement for vim.
+    && ln -s $(which nvim) /usr/local/bin/vim
 
 COPY entrypoint-development.sh /sbin/docker-entrypoint.sh
