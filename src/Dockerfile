@@ -119,5 +119,14 @@ RUN set -eux \
 # Setup neovim as the replacement for vim.
     && ln -s $(which nvim) /usr/local/bin/vim
 
+COPY ./skel /etc/skel
+
+RUN set -eux \
+    && mkdir /home/app \
+    && chown app:app -R /home/app \
+    && gosu app cp -R /etc/skel/. /home/app/ 
+
+VOLUME /home/app
+
 COPY docker-entrypoint-develop.sh /sbin/docker-entrypoint.sh
 
