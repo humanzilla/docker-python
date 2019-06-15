@@ -19,6 +19,7 @@ RUN set -eux \
         gettext \
         tzdata \
         build-base \
+        bash \
 # Library headers to build python packages
         musl-dev \
         bzip2-dev \
@@ -106,7 +107,6 @@ FROM base as develop
 
 RUN set -eux \
     && apk add --no-cache \
-        bash \
         htop \
         openssh-client \
         groff \
@@ -124,7 +124,7 @@ COPY ./skel /etc/skel
 RUN set -eux \
     && mkdir /home/app \
     && chown app:app -R /home/app \
-    && gosu app cp -R /etc/skel/. /home/app/ 
+    && gosu app cp -R /etc/skel/. /home/app/
 
 VOLUME /home/app
 
