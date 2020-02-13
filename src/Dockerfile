@@ -110,7 +110,7 @@ RUN set -eux \
         htop \
         openssh-client \
         groff \
-        neovim \
+        vim \
         tmux \
         curl \
         unzip \
